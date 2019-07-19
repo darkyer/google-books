@@ -64,25 +64,27 @@ class Books extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <div>
         <Jumbotron>
           <h1 className="text-white">Find Your Favorite Books with GoogleBook API</h1>
         </Jumbotron>
-        <Container>
-          <Row>
-            <Col size="12">
-              <SearchForm
-                handleFormSubmit={this.handleFormSubmit}
-                handleInputChange={this.handleInputChange}
-              />
-            </Col>
-          </Row>
+        <Container fluid>
+          <Container>
+            <Row>
+              <Col size="12">
+                <SearchForm
+                  handleFormSubmit={this.handleFormSubmit}
+                  handleInputChange={this.handleInputChange}
+                />
+              </Col>
+            </Row>
+          </Container>
+          <br></br>
+          <Container>
+            <SearchResult books={this.state.books} handleSavedButton={this.handleSavedButton} />
+          </Container>
         </Container>
-        <br></br>
-        <Container>
-          <SearchResult books={this.state.books} handleSavedButton={this.handleSavedButton} />
-        </Container>
-      </Container>
+      </div>
     )
   }
 }
